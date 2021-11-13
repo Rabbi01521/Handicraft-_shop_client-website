@@ -1,8 +1,7 @@
-import { Container, Paper, Typography } from "@mui/material";
+import { Container, Grid, Paper, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import Slider from "react-slick";
 
 const DashboardSlider = () => {
   const [products, setProducts] = useState([]);
@@ -14,52 +13,10 @@ const DashboardSlider = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
-  var settings = {
-    dots: false,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 320,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
 
   return (
     <Container sx={{ my: 5 }}>
-      <Typography variant="h4"> Recommended</Typography>
+      <Typography variant="h4">Recommended</Typography>
       <Box
         sx={{
           width: "100px",
@@ -71,54 +28,61 @@ const DashboardSlider = () => {
           borderRadius: 15,
         }}
       ></Box>
-      <Slider {...settings}>
+      <Grid
+        container
+        alignItems="center"
+        spacing={{ xs: 2, md: 3 }}
+        columns={{ xs: 4, sm: 8, md: 12 }}
+      >
         {products.map((product, index) => (
-          <Box
-            key={index}
-            sx={{
-              display: "flex",
-              "& > :not(style)": {
-                m: 1,
-                width: 300,
-                height: 300,
-                textAlign: "center",
-                p: 3,
-              },
-            }}
-          >
-            <NavLink
-              style={{
-                color: "white",
-                textDecoration: "none",
+          <Grid item xs={12} sm={12} md={4}>
+            <Box
+              key={index}
+              sx={{
+                display: "flex",
+                "& > :not(style)": {
+                  m: 1,
+                  width: 300,
+                  height: 300,
+                  textAlign: "center",
+                  p: 3,
+                },
               }}
-              to={`/products/${product._id}`}
             >
-              <Paper
-                variant="outlined"
-                square
+              <NavLink
                 style={{
-                  backgroundImage: `url(${product?.picture})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "inherit",
-                  backgroundRepeat: "no-repeat",
-                  height: "300px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  color: "white",
+                  textDecoration: "none",
                 }}
+                to={`/products/${product._id}`}
               >
-                <Typography variant="h6" sx={{ color: "white" }}>
-                  {product.name}
-                </Typography>
-                <Typography variant="h6" sx={{ color: "white" }}>
-                  Price: {product.price}
-                </Typography>
-              </Paper>
-            </NavLink>
-          </Box>
+                <Paper
+                  variant="outlined"
+                  square
+                  style={{
+                    backgroundImage: `url(${product?.picture})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "inherit",
+                    backgroundRepeat: "no-repeat",
+                    height: "300px",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography variant="h6" sx={{ color: "white" }}>
+                    {product.name}
+                  </Typography>
+                  <Typography variant="h6" sx={{ color: "white" }}>
+                    Price: {product.price}
+                  </Typography>
+                </Paper>
+              </NavLink>
+            </Box>
+          </Grid>
         ))}
-      </Slider>
+      </Grid>
     </Container>
   );
 };

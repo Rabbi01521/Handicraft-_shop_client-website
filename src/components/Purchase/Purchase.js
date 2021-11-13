@@ -93,10 +93,10 @@ const Purchase = () => {
       <Container sx={{ my: 5 }}>
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
           <Grid item xs={12} md={6}>
-            <Box style={{ width: "500px" }}>
+            <Box>
               <img src={singleProduct?.picture} alt="" width="100%" />
             </Box>
-            <Box style={{ width: "500px" }}>
+            <Box>
               <img src={singleProduct?.img} alt="" width="100%" />
             </Box>
           </Grid>
