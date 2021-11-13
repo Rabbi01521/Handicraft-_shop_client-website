@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Handicraft Shop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Live Website](https://handicraft-store.web.app/)
 
-## Available Scripts
+### UI ScreenShot :
 
-In the project directory, you can run:
+<img src="https://i.ibb.co/0JPQrmY/Handicraft-Shop-10.png" alt="Handicraft-Shop-10" border="0">
+<img src="https://i.ibb.co/cxCjzWN/Handicraft-Shop-9.png" alt="Handicraft-Shop-9" border="0">
+<img src="https://i.ibb.co/8zR5GQ6/Handicraft-Shop-8.png" alt="Handicraft-Shop-8" border="0">
+<img src="https://i.ibb.co/kxJrwm2/Handicraft-Shop-7.png" alt="Handicraft-Shop-7" border="0">
+<img src="https://i.ibb.co/6Jb4GJ5/Handicraft-Shop-6.png" alt="Handicraft-Shop-6" border="0">
+<img src="https://i.ibb.co/QHz17k2/Handicraft-Shop-5.png" alt="Handicraft-Shop-5" border="0">
+<img src="https://i.ibb.co/XxzWKz5/Handicraft-Shop-4.png" alt="Handicraft-Shop-4" border="0">
+<img src="https://i.ibb.co/YjBzNzX/Handicraft-Shop-3.png" alt="Handicraft-Shop-3" border="0">
+<img src="https://i.ibb.co/RPg5bTS/Handicraft-Shop-2.png" alt="Handicraft-Shop-2" border="0">
+<img src="https://i.ibb.co/b6CXJb3/Handicraft-Shop.png" alt="Handicraft-Shop" border="0">
+<img src="https://i.ibb.co/x7mnCTS/Handicraft-Shop-1.png" alt="Handicraft-Shop-1" border="0">
 
-### `yarn start`
+### Features:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- user can visit all the page through routing .
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- user can login.
 
-### `yarn test`
+- New user can register.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- If a user is logged in, he/she will see more options like My Orders, Manage All Orders, Add A New Service, Logout.
 
-### `yarn build`
+- the products will have a maximum of 6 items/products in home page.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- If a user is logged in, he/she will see another option on the header is called Dashboard and inside that dashboard a normal user (not an admin) will see options like pay,My Orders, Review, Logout.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- On the my orders page, the logged in user will see only his/her orders. If the user wants, he/she should be able to cancel/delete any order.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- On the Review page, users should be able to add a review and that review will appear on the home age.
 
-### `yarn eject`
+- f an admin logs in, he/she will not see the options that a normal user sees. Insted an admin will see Manage All Orders, Add A Product, Make Admin, Manage Products Logout.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- An Admin should be able to make another user an admin. If an admin wants, he/she will be able to add a product on the add a product page. After adding the product, this product will appear on the explore page.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- For our testing purpose please add one admin with the email address: admin@admin.com with password: 123456
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- On the Manage All Orders page for the admin, the logged in admin will see the orders placed by every user. If multiple users used this website to place orders, everyone's order will be displayed here. Admin can update the status of the order. At the time of placing an order, every order will have a default status: pending. On the Manage All Orders page, an admin will be able to update the status of the pending to shipped status.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- on the Manage Products page, an admin can delete any of the products. Please make sure there is a confirmation. After delete that product will not appear on the explore page.
 
-## Learn More
+- user can logged in by Google.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- if Router not matched then user see 404 page.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- After reloading the page on a private route, the user should not be redirected to the login page.
 
-### Code Splitting
+- if user enter wrong email and password then it show error message.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Once logged in, the user name, logout button should appear on the header which will log out the user once clicked.
 
-### Analyzing the Bundle Size
+- .env file to hide db user and password and also use .gitignore file
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Click on the Manage All Orders page, the logged in user will see the orders placed by every Admin.
 
-### Making a Progressive Web App
+- i used Environment variable in Client side.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Technology :
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- React
+- Material UI
+- Own API (for fetching data)
+- React Router
+- FireBase
+- full Responsive
+- node
+- express
+- mongodb
+- react slick carousel
